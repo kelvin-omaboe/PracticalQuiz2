@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Karen Blukoo's Solar System Practical</title>
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+</head>
+
+<body>
+<a-scene background="color: black">
+
+  <!-- ================= ASSETS ================= -->
+  <a-assets>
+    <img id="sun" src="texture/2k_sun.jpg">
+    <img id="mercury" src="texture/2k_mercury.jpg">
+    <img id="venusSurface" src="texture/2k_venus_surface.jpg">
+    <img id="venusAtmos" src="texture/2k_venus_atmosphere.jpg">
+    <img id="earth" src="texture/2k_earth_daymap.jpg">
+    <img id="mars" src="texture/2k_mars.jpg">
+    <img id="jupiter" src="texture/2k_jupiter.jpg">
+    <img id="saturn" src="texture/2k_saturn.jpg">
+    <img id="uranus" src="texture/2k_uranus.jpg">
+    <img id="neptune" src="texture/2k_neptune.jpg">
+    <img id="stars" src="texture/2k_stars.jpg">
+    <img id="milkyway" src="texture/2k_stars_milky_way.jpg">
+  </a-assets>
+
+  <!-- ================= BACKGROUND ================= -->
+  <a-sky src="#milkyway" rotation="0 -90 0"></a-sky>
+
+<!-- ================= CAMERA ================= -->
+<a-entity
+  animation="property: rotation; to: 0 360 0; dur: 60000; loop: true; easing: linear">
+
+  <a-entity position="0 8 32">
+    <a-camera look-controls="enabled: true"></a-camera>
+  </a-entity>
+
+</a-entity>
+
+
+<!-- ================= LIGHTING ================= -->
+
+<!-- Sun light (primary) -->
+<a-light
+  type="point"
+  position="0 0 0"
+  intensity="1.5"
+  distance="60">
+</a-light>
+
+<!-- Ambient fill light (prevents darkness) -->
+<a-light
+  type="ambient"
+  intensity="0.4"
+  color="#ffffff">
+</a-light>
+
+<!-- Directional light (soft balance) -->
+<a-light
+  type="directional"
+  intensity="0.5"
+  position="10 20 10"
+  target="#sun">
+</a-light>
+
+
+  <!-- ================= SUN ================= -->
+<a-sphere
+  radius="2.5"
+  material="src: #sun; shader: flat"
+  animation="property: rotation; to: 0 360 0; dur: 8000; loop: true">
+</a-sphere>
+
+
+  <!-- ================= MERCURY ================= -->
+  <a-torus radius="4" radius-tubular="0.02" rotation="90 0 0" color="white" opacity="0.35"></a-torus>
+  <a-entity animation="property: rotation; to: 0 360 0; dur: 4000; loop: true">
+    <a-sphere position="4 0 0" radius="0.3" material="src: #mercury"
+      animation="property: rotation; to: 0 360 0; dur: 2000; loop: true">
+    </a-sphere>
+  </a-entity>
+
+  <!-- ================= VENUS ================= -->
+  <a-torus radius="6" radius-tubular="0.02" rotation="90 0 0" color="white" opacity="0.35"></a-torus>
+  <a-entity animation="property: rotation; to: 0 360 0; dur: 6000; loop: true">
+
+    <a-sphere position="6 0 0" radius="0.5" material="src: #venusSurface"
+      animation="property: rotation; to: 0 360 0; dur: 3500; loop: true">
+    </a-sphere>
+
+    <a-sphere position="6 0 0" radius="0.53"
+      material="src: #venusAtmos; transparent: true; opacity: 0.6">
+    </a-sphere>
+
+  </a-entity>
+
+  <!-- ================= EARTH ================= -->
+  <a-torus radius="8" radius-tubular="0.02" rotation="90 0 0" color="white" opacity="0.35"></a-torus>
+  <a-entity animation="property: rotation; to: 0 360 0; dur: 8000; loop: true">
+    <a-sphere position="8 0 0" radius="0.5" material="src: #earth"
+      animation="property: rotation; to: 0 360 0; dur: 3000; loop: true">
+    </a-sphere>
+  </a-entity>
+
+  <!-- ================= MARS ================= -->
+  <a-torus radius="10" radius-tubular="0.02" rotation="90 0 0" color="white" opacity="0.35"></a-torus>
+  <a-entity animation="property: rotation; to: 0 360 0; dur: 10000; loop: true">
+    <a-sphere position="10 0 0" radius="0.4" material="src: #mars"
+      animation="property: rotation; to: 0 360 0; dur: 3200; loop: true">
+    </a-sphere>
+  </a-entity>
+
+  <!-- ================= JUPITER ================= -->
+  <a-torus radius="14" radius-tubular="0.03" rotation="90 0 0" color="white" opacity="0.35"></a-torus>
+  <a-entity animation="property: rotation; to: 0 360 0; dur: 14000; loop: true">
+    <a-sphere position="14 0 0" radius="1.2" material="src: #jupiter"
+      animation="property: rotation; to: 0 360 0; dur: 5000; loop: true">
+    </a-sphere>
+  </a-entity>
+
+  <!-- ================= SATURN ================= -->
+  <a-torus radius="18" radius-tubular="0.03" rotation="90 0 0" color="white" opacity="0.35"></a-torus>
+  <a-entity animation="property: rotation; to: 0 360 0; dur: 17000; loop: true">
+
+    <a-sphere position="18 0 0" radius="1.1" material="src: #saturn"
+      animation="property: rotation; to: 0 360 0; dur: 4000; loop: true">
+    </a-sphere>
+
+    <a-torus
+      position="18 0 0"
+      rotation="90 0 0"
+      radius="1.8"
+      radius-tubular="0.15"
+      color="#c2b280"
+      opacity="0.7">
+    </a-torus>
+
+  </a-entity>
+
+  <!-- ================= URANUS ================= -->
+  <a-torus radius="22" radius-tubular="0.03" rotation="90 0 0" color="white" opacity="0.35"></a-torus>
+  <a-entity animation="property: rotation; to: 0 360 0; dur: 20000; loop: true">
+    <a-sphere position="22 0 0" radius="0.9" material="src: #uranus"
+      animation="property: rotation; to: 0 360 0; dur: 4500; loop: true">
+    </a-sphere>
+  </a-entity>
+
+  <!-- ================= NEPTUNE ================= -->
+  <a-torus radius="26" radius-tubular="0.03" rotation="90 0 0" color="white" opacity="0.35"></a-torus>
+  <a-entity animation="property: rotation; to: 0 360 0; dur: 23000; loop: true">
+    <a-sphere position="26 0 0" radius="0.9" material="src: #neptune"
+      animation="property: rotation; to: 0 360 0; dur: 4700; loop: true">
+    </a-sphere>
+  </a-entity>
+  
+<!-- ================= IMPROVED METEOR ================= -->
+<a-entity id="meteorSystem">
+
+  <!-- Meteor head -->
+  <a-sphere
+    id="meteor"
+    radius="0.2"
+    color="#ff6600"
+    emissive="#ff9900"
+    emissiveIntensity="1.2"
+    position="-40 15 -30"
+    animation="property: position;
+               from: -40 15 -30;
+               to: 40 5 30;
+               dur: 5000;
+               easing: linear;
+               loop: true">
+  </a-sphere>
+
+  <!-- Meteor fire trail -->
+  <a-entity particle-system="preset: dust; particleCount: 150; color: #ff6600, #ffcc33; size: 0.1; velocityValue: 0 0 0.5; duration: 0.5; texture: #meteorTexture;"></a-entity>
+
+</a-entity>
+
+<!-- ================= IMPROVED ALIEN SPACESHIP ================= -->
+<a-entity id="alienShip"
+          position="-50 12 -20"
+          rotation="0 0 0"
+          animation="property: position;
+                     from: -50 12 -20;
+                     to: 50 10 20;
+                     dur: 35000;
+                     easing: linear;
+                     loop: true">
+
+  <!-- Main body (saucer) -->
+  <a-cylinder radius="2" height="0.5" color="#5555ff" metalness="0.8" rotation="90 0 0"></a-cylinder>
+
+  <!-- Dome cockpit -->
+  <a-sphere radius="0.8" position="0 0.35 0" color="#00ffff" opacity="0.7" transparent="true"></a-sphere>
+
+  <!-- Engine lights / thrusters -->
+  <a-ring radius-inner="0.05" radius-outer="0.15" color="#00ffcc" position="1.5 0 -0.2" rotation="90 0 0"></a-ring>
+  <a-ring radius-inner="0.05" radius-outer="0.15" color="#00ffcc" position="-1.5 0 -0.2" rotation="90 0 0"></a-ring>
+  <a-ring radius-inner="0.05" radius-outer="0.15" color="#00ffcc" position="0 0 -1.5" rotation="90 0 0"></a-ring>
+
+  <!-- Bottom glow (like a hovering effect) -->
+  <a-cylinder radius="1.5" height="0.1" color="#00ffff" opacity="0.3" position="0 -0.3 0"></a-cylinder>
+
+</a-entity>
+
+
+
+
+</a-scene>
+</body>
+</html>
+    
