@@ -16,6 +16,7 @@
     <img id="venusSurface" src="texture/2k_venus_surface.jpg">
     <img id="venusAtmos" src="texture/2k_venus_atmosphere.jpg">
     <img id="earth" src="texture/2k_earth_daymap.jpg">
+    <img id="moon" src="texture/2k_moon.jpg">
     <img id="mars" src="texture/2k_mars.jpg">
     <img id="jupiter" src="texture/2k_jupiter.jpg">
     <img id="saturn" src="texture/2k_saturn.jpg">
@@ -101,6 +102,12 @@
     <a-sphere position="8 0 0" radius="0.5" material="src: #earth"
       animation="property: rotation; to: 0 360 0; dur: 3000; loop: true">
     </a-sphere>
+
+    <a-entity position="8 0 0" animation="property: rotation; to: 0 360 0; dur: 2400; loop: true; easing: linear">
+      <a-sphere position="1.2 0 0" radius="0.15" material="src: #moon"
+        animation="property: rotation; to: 0 360 0; dur: 1800; loop: true; easing: linear">
+      </a-sphere>
+    </a-entity>
   </a-entity>
 
   <!-- ================= MARS ================= -->
